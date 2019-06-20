@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: test
+---
+server:
+  port: 2000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1000/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  profiles: dev
+  application:
+    name: PALT_SERVE_DEV
+---
+server:
+  port: 2001
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1000/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  profiles: test
+  application:
+    name: PALT_SERVE_TEST
